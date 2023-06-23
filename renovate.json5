@@ -1,6 +1,7 @@
 // vim: set ft=jsonc:
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "dependencyDashboard": true,
   "regexManagers": [
     // Update raw.githubusercontent.com tags if referenced in kustomizations
     // https://regex101.com/r/vg8AY1/4
