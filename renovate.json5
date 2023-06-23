@@ -1,0 +1,14 @@
+// vim: set ft=jsonc:
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "regexManagers": [
+    // Update raw.githubusercontent.com tags if referenced in kustomizations
+    // https://regex101.com/r/vg8AY1/4
+    {
+      "fileMatch": "(^|/)kustomization.yaml$",
+      "matchStrings": [
+        "- https:\\/\\/raw\\.githubusercontent\\.com\\/(?<depName>[^\\/]+\\/[^\\/]+)\\/(?<currentValue>[^\\/]+)(?:.*\\s+#\\s+(?:datasource=(?<datasource>[a-zA-Z0-9-_\.]+))?\\s?(?:versioning=(?<versioning>.*))?)?"
+      ]
+    }
+  ]
+}

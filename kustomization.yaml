@@ -1,0 +1,13 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: monitoring
+generatorOptions:
+  disableNameSuffixHash: true
+configMapGenerator:
+  - name: ingress-nginx-dashboards
+    files:
+      - https://raw.githubusercontent.com/kubernetes/ingress-nginx/helm-chart-4.6.0/deploy/grafana/dashboards/request-handling-performance.json  # datasource=github-releases versioning=regex:^helm-chart-(?<major>\d+)\.(?<minor>\d+)\.(?<patch>\d+)$
+  - name: tempo-dashboards
+    files:
+      - https://raw.githubusercontent.com/grafana/tempo/v2.1.1/operations/tempo-mixin-compiled/dashboards/tempo-operational.json
