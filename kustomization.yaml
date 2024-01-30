@@ -7,7 +7,7 @@ generatorOptions:
 configMapGenerator:
   - name: ingress-nginx-dashboards
     files:
-      - https://raw.githubusercontent.com/kubernetes/ingress-nginx/helm-chart-4.6.0/deploy/grafana/dashboards/request-handling-performance.json  # datasource=github-tags versioning=regex:^helm-chart-(?<major>\d+)\.(?<minor>\d+)\.(?<patch>\d+)$
+      - https://raw.githubusercontent.com/kubernetes/ingress-nginx/helm-chart-4.9.1/deploy/grafana/dashboards/request-handling-performance.json  # datasource=github-tags versioning=regex:^helm-chart-(?<major>\d+)\.(?<minor>\d+)\.(?<patch>\d+)$
   - name: tempo-dashboards
     files:
       - https://raw.githubusercontent.com/grafana/tempo/v2.1.1/operations/tempo-mixin-compiled/dashboards/tempo-operational.json
